@@ -1,0 +1,29 @@
+public class MinStack {
+
+    private ArrayDeque<Integer> deque;
+    private PriorityQueue<Integer> minHeap;
+    
+    public MinStack() {
+        deque = new ArrayDeque<>();
+        minHeap = new PriorityQueue<>();
+    }
+    
+    public void push(int x) {
+        deque.push(x);
+        minHeap.add(x);
+    }
+    
+    public void pop() {
+        Integer x = deque.peek();
+        deque.pop();
+        minHeap.remove(x);
+    }
+    
+    public int top() {
+        return deque.peek();
+    }
+    
+    public int getMin() {
+        return minHeap.peek();
+    }
+}
