@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Scanner;
 
 //Works only small size inputs.
-//Not optimal solution
+//Not optimal solution, just brute-force try
 public class Main {
 
     public static void main(String[] args) throws Exception {
