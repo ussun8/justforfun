@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 //Works only small size inputs.
 //Not optimal solution, just brute-force try
-public class Main {
+public class MainSmallSize {
 
     public static void main(String[] args) throws Exception {
         Scanner in = new Scanner(new BufferedReader(new InputStreamReader(System.in)));
@@ -51,7 +51,7 @@ public class Main {
 
     private static void dfs(StringBuilder builder, String keyboard, String target, int typingCount, List<Integer> countList, int idx) {
         if(idx == typingCount) {
-            countList.add(getOccuranceCount(builder.toString(), target));
+            countList.add(getOccurrenceCount(builder.toString(), target));
             return;
         }
         for(int i=0; i<keyboard.length(); i++) {
@@ -61,7 +61,8 @@ public class Main {
         }
     }
 
-    private static Integer getOccuranceCount(String source, String target) {
+    //Should be used KMP
+    private static Integer getOccurrenceCount(String source, String target) {
         int lastIndex = 0;
         int count = 0;
         while(lastIndex != -1) {
